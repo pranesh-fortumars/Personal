@@ -1,0 +1,362 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-porcelain: #fafaf7;
+  --color-sapphire: #173a70;
+  --color-ocean: #102b4c;
+  --color-emerald: #176b55;
+  --color-sage: #dce8de;
+  --color-champagne: #c5a46d;
+  --color-champagne-light: #e6d4a8;
+  --color-champagne-deep: #a8854f;
+  --color-ivory: #f4efe5;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--color-porcelain);
+  color: var(--color-ocean);
+  font-family: 'Manrope', system-ui, sans-serif;
+  overflow-x: hidden;
+  font-feature-settings: 'liga' 1, 'kern' 1;
+}
+
+/* Stronger supporting text on light surfaces */
+.text-sapphire\/30 { color: rgba(23, 58, 112, 0.58) !important; }
+.text-sapphire\/40 { color: rgba(23, 58, 112, 0.66) !important; }
+.text-sapphire\/50 { color: rgba(23, 58, 112, 0.74) !important; }
+.text-sapphire\/60 { color: rgba(23, 58, 112, 0.80) !important; }
+.text-sapphire\/70 { color: rgba(23, 58, 112, 0.86) !important; }
+.text-sapphire\/75 { color: rgba(23, 58, 112, 0.88) !important; }
+
+/* ---------- Custom scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-champagne), var(--color-champagne-deep));
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-champagne-deep);
+}
+
+::selection {
+  background: var(--color-champagne);
+  color: #fff;
+}
+
+/* ---------- Typography utilities ---------- */
+.text-balance {
+  text-wrap: balance;
+}
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Display heading — DM Serif Display, tall and dramatic */
+.heading-display {
+  font-family: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* Editorial serif — Cormorant Garamond for body italics and sub-headings */
+.heading-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.2;
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+}
+
+/* ---------- Gold effects ---------- */
+.gold-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-champagne) 30%,
+    var(--color-champagne-light) 50%,
+    var(--color-champagne) 70%,
+    transparent
+  );
+}
+
+.gold-line-vertical {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--color-champagne) 30%,
+    var(--color-champagne-light) 50%,
+    var(--color-champagne) 70%,
+    transparent
+  );
+}
+
+.gold-text {
+  background: linear-gradient(
+    120deg,
+    #c5a46d 0%,
+    #e6d4a8 35%,
+    #c5a46d 55%,
+    #a8854f 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    120deg,
+    #c5a46d 0%,
+    #f0e4c4 25%,
+    #c5a46d 50%,
+    #a8854f 75%,
+    #c5a46d 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 5s linear infinite;
+}
+
+/* Gold foil embossed text for dark backgrounds */
+.gold-foil {
+  background: linear-gradient(
+    135deg,
+    #a8854f 0%,
+    #c5a46d 25%,
+    #f0e4c4 50%,
+    #c5a46d 75%,
+    #a8854f 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 2px rgba(197, 164, 109, 0.3));
+}
+
+/* ---------- Glass / premium surfaces ---------- */
+.glass {
+  background: rgba(250, 250, 247, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.glass-dark {
+  background: rgba(16, 43, 76, 0.6);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+}
+
+.glass-champagne {
+  background: rgba(197, 164, 109, 0.08);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+
+/* ---------- Premium surfaces ---------- */
+.surface-luxury {
+  background: linear-gradient(135deg, #fafaf7 0%, #f4efe5 100%);
+  box-shadow:
+    0 20px 60px -15px rgba(16, 43, 76, 0.12),
+    0 8px 25px -10px rgba(197, 164, 109, 0.10),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
+}
+
+.surface-dark-luxury {
+  background: linear-gradient(135deg, #102b4c 0%, #0a1c35 100%);
+  box-shadow:
+    0 30px 80px -20px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 0 rgba(197, 164, 109, 0.15);
+}
+
+/* ---------- 3D perspective helpers ---------- */
+.perspective {
+  perspective: 1800px;
+}
+.perspective-near {
+  perspective: 900px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ---------- Paper / texture ---------- */
+.paper-texture {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(197, 164, 109, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(23, 107, 85, 0.03) 0%, transparent 50%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.008) 2px,
+      rgba(0, 0, 0, 0.008) 4px
+    );
+}
+
+/* Subtle grain overlay */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  opacity: 0.06;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* Fine grain for dark sections */
+.grain-dark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* ---------- Ornamental divider ---------- */
+.divider-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.divider-ornament::before,
+.divider-ornament::after {
+  content: '';
+  height: 1px;
+  width: 3rem;
+  background: linear-gradient(90deg, transparent, var(--color-champagne));
+}
+.divider-ornament::after {
+  background: linear-gradient(90deg, var(--color-champagne), transparent);
+}
+
+/* ---------- Link hover underline ---------- */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-champagne);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* ---------- Button premium ---------- */
+.btn-gold {
+  background: linear-gradient(135deg, #c5a46d 0%, #d4b882 50%, #c5a46d 100%);
+  box-shadow: 0 4px 20px rgba(197, 164, 109, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-gold:hover {
+  box-shadow: 0 8px 30px rgba(197, 164, 109, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-ghost:hover {
+  border-color: var(--color-champagne);
+  background: rgba(197, 164, 109, 0.05);
+}
+
+/* ---------- Card sheen ---------- */
+.card-sheen {
+  position: relative;
+  overflow: hidden;
+}
+.card-sheen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 70%
+  );
+  transition: left 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 5;
+  pointer-events: none;
+}
+.card-sheen:hover::before {
+  left: 100%;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Utilities ---------- */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---------- Page flip ---------- */
+.page-flip {
+  transform-origin: left center;
+  transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ---------- Shimmer keyframe (used by gold-shimmer) ---------- */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
