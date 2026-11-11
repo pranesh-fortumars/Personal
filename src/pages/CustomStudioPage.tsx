@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Sparkles, MessageCircle, Check } from 'lucide-react';
 import { SectionHeading } from '@/components/SectionHeading';
 import { BUSINESS } from '@/data/templates';
+import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 
 export function CustomStudioPage() {
   const [form, setForm] = useState({
@@ -9,11 +11,25 @@ export function CustomStudioPage() {
   });
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const requestId = `BESPOKE-${Date.now().toString(36).toUpperCase()}`;
+
+    // Sync custom inquiry to Firebase Firestore
+    try {
+      await setDoc(doc(db, 'custom_inquiries', requestId), {
+        id: requestId,
+        ...form,
+        createdAt: serverTimestamp(),
+      });
+    } catch (err) {
+      console.warn('Firebase bespoke inquiry notice:', err);
+    }
+
     const msg = [
       '*AURELIA — Custom Design Request*',
       '',
+      `*Reference:* ${requestId}`,
       `*Name:* ${form.name}`,
       `*Event:* ${form.event}`,
       `*Date:* ${form.date}`,
