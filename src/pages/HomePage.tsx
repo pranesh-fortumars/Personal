@@ -320,31 +320,34 @@ function HeroInvitation({ templateId }: { templateId: number }) {
 
 function WorldIntro() {
   return (
-    <section className="py-28 md:py-36 px-6 bg-sapphire-deep text-ivory grain-dark relative overflow-hidden" style={{
-      background: 'radial-gradient(ellipse 70% 60% at 50% 30%, #173A70 0%, #071526 100%)',
-      borderBottom: '1px solid rgba(197, 164, 109, 0.2)'
-    }}>
+    <section className="py-24 md:py-32 px-6 relative overflow-hidden bg-gradient-to-b from-[#FAF7F2] via-[#F4EFE6] to-[#FAF7F2] text-sapphire-deep border-y border-champagne/30 shadow-inner">
+      {/* Subtle warm luxury ambient lighting */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] rounded-full bg-champagne/10 blur-[130px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] rounded-full bg-champagne/15 blur-[120px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(197,164,109,0.06)_1px,transparent_1px)] bg-[size:32px_32px]" />
       </div>
+
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.9 }}
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-champagne/15 border border-champagne/30 text-[10px] tracking-widest3 uppercase text-champagne mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-champagne/50 shadow-sm text-[10px] tracking-widest3 uppercase text-champagne-deep font-semibold mb-6">
             <span>Welcome to the World</span>
           </div>
-          <h2 className="heading-display text-3xl md:text-5xl lg:text-6xl text-ivory leading-display text-balance drop-shadow-md">
+
+          <h2 className="heading-display text-3xl md:text-5xl lg:text-6xl text-sapphire-deep leading-display text-balance">
             Where imagination becomes<br />
-            <span className="italic text-champagne">an invitation.</span>
+            <span className="italic text-champagne-deep">an invitation.</span>
           </h2>
+
           <div className="divider-ornament my-6">
-            <span className="text-champagne text-xs">✦</span>
+            <span className="text-champagne-deep text-sm">✦</span>
           </div>
-          <p className="text-lg md:text-xl heading-editorial italic text-ivory/85 max-w-2xl mx-auto leading-relaxed2 font-normal">
+
+          <p className="text-lg md:text-xl heading-editorial italic text-slate-800 max-w-2xl mx-auto leading-relaxed2 font-normal">
             Step into a universe of celebration, colour and craftsmanship. Explore bespoke invitation worlds —
             each a complete, personalised suite of pages that opens, turns, and transforms in your hands.
             Not templates. Not cards. Living invitations that begin a memory.
