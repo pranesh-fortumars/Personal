@@ -1,11 +1,13 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Plus, Minus, ShoppingBag, RotateCcw, Save, Truck, Check, Palette, Type, Globe2 } from 'lucide-react';
+import { ArrowLeft, Plus, Minus, ShoppingBag, RotateCcw, Save, Truck, Check, Palette, Type, Globe2, Heart } from 'lucide-react';
 import { TEMPLATE_MAP, BUSINESS } from '@/data/templates';
 import { CATEGORY_MAP } from '@/data/colorways';
 import { InvitationViewer } from '@/components/InvitationViewer';
 import { LaunchOfferBanner } from '@/components/LaunchOfferBanner';
+import { WaxSealCustomizer } from '@/components/WaxSealCustomizer';
 import { useCart, emptyPersonalisation } from '@/context/CartContext';
+import { useWishlist } from '@/context/WishlistContext';
 import { useDraft } from '@/hooks/useDraft';
 import type { Language, Personalisation } from '@/types';
 
@@ -25,7 +27,10 @@ export function InvitationDetailPage() {
   const [p, setP] = useState<Personalisation>(emptyPersonalisation());
   const [saved, setSaved] = useState(false);
   const [added, setAdded] = useState(false);
+  const [sealInitials, setSealInitials] = useState('AV');
+  const [sealColor, setSealColor] = useState('#C5A46D');
   const { draft, save, reset } = useDraft(template?.id || 0);
+  const { isWishlisted, toggleWishlist } = useWishlist();
 
   useEffect(() => {
     if (draft && Object.values(draft).some((v) => v)) {
@@ -98,7 +103,18 @@ export function InvitationDetailPage() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-10">
           {/* Left: Viewer + title */}
           <div>
-            <div className="text-center mb-6">
+            <div className="text-center mb-6 relative">
+              <button
+                onClick={() => toggleWishlist(template.id)}
+                className={`absolute right-4 top-2 p-2.5 rounded-full border transition-all ${
+                  isWishlisted(template.id)
+                    ? 'bg-red-50 border-red-200 text-red-500 scale-110 shadow-sm'
+                    : 'border-champagne/30 text-sapphire/40 hover:text-red-400 bg-white/60'
+                }`}
+                title={isWishlisted(template.id) ? 'Saved in Wishlist' : 'Add to Wishlist'}
+              >
+                <Heart className={`w-5 h-5 ${isWishlisted(template.id) ? 'fill-current' : ''}`} />
+              </button>
               <p className="text-[10px] tracking-widest3 uppercase text-champagne mb-2">{cat.name}</p>
               <h1 className="text-3xl md:text-5xl font-display text-sapphire-deep leading-tight">{template.name}</h1>
               <p className="font-tamil text-lg text-sapphire/60 mt-1">{template.tamilName}</p>
@@ -246,6 +262,14 @@ export function InvitationDetailPage() {
                 </button>
               </div>
             </div>
+
+            {/* Bespoke Wax Seal Customizer */}
+            <WaxSealCustomizer
+              initials={sealInitials}
+              sealColor={sealColor}
+              onColorChange={setSealColor}
+              onInitialsChange={setSealInitials}
+            />
 
             {/* Free delivery note */}
             <div className="flex items-center justify-center gap-2 text-emerald">

@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { CartProvider } from '@/context/CartContext';
+import { WishlistProvider } from '@/context/WishlistContext';
 import { FloatingNav } from '@/components/FloatingNav';
 import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
+import { MusicAmbiencePlayer } from '@/components/MusicAmbiencePlayer';
 import { HomePage } from '@/pages/HomePage';
 import { ExplorePage } from '@/pages/ExplorePage';
 import { CollectionPage } from '@/pages/CollectionPage';
@@ -19,10 +21,11 @@ import { AdminPage } from '@/pages/AdminPage';
 export default function App() {
   return (
     <BrowserRouter>
-      <CartProvider>
-        <ScrollToTop />
-        <FloatingNav />
-        <main>
+      <WishlistProvider>
+        <CartProvider>
+          <ScrollToTop />
+          <FloatingNav />
+          <main>
           <Routes>
             {/* Core Home & Catalog */}
             <Route path="/" element={<HomePage />} />
@@ -71,8 +74,10 @@ export default function App() {
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
+        <MusicAmbiencePlayer />
         <Footer />
       </CartProvider>
-    </BrowserRouter>
-  );
+    </WishlistProvider>
+  </BrowserRouter>
+);
 }

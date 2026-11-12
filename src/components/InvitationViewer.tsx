@@ -1,5 +1,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Maximize2, Minimize2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Maximize2, Minimize2, Download, Check } from 'lucide-react';
+import { toPng } from 'html-to-image';
+import confetti from 'canvas-confetti';
 import type { Colorway, Language, Template, Personalisation, PageContent } from '@/types';
 import { InvitationPage } from './InvitationPage';
 
@@ -15,11 +17,44 @@ export function InvitationViewer({ template, colorway, language, personalisation
   const [current, setCurrent] = useState(0);
   const [flipping, setFlipping] = useState<'next' | 'prev' | null>(null);
   const [fullscreen, setFullscreen] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const [downloadSuccess, setDownloadSuccess] = useState(false);
   const touchStart = useRef<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const cardProofRef = useRef<HTMLDivElement>(null);
 
   const totalPages = pages.length;
   const isDark = colorway.bg.startsWith('#1') || colorway.bg.startsWith('#2');
+
+  const handleDownloadProof = async () => {
+    if (!cardProofRef.current || downloading) return;
+    try {
+      setDownloading(true);
+      const dataUrl = await toPng(cardProofRef.current, {
+        quality: 0.95,
+        pixelRatio: 2,
+        backgroundColor: colorway.bg,
+      });
+      const link = document.createElement('a');
+      link.download = `${template.name.replace(/\s+/g, '_')}_Page_${current + 1}.png`;
+      link.href = dataUrl;
+      link.click();
+      
+      confetti({
+        particleCount: 50,
+        spread: 60,
+        origin: { y: 0.7 },
+        colors: ['#C5A46D', '#173A70', '#176B55']
+      });
+
+      setDownloadSuccess(true);
+      setTimeout(() => setDownloadSuccess(false), 2000);
+    } catch (err) {
+      console.error('Failed to download proof image:', err);
+    } finally {
+      setDownloading(false);
+    }
+  };
 
   const goNext = useCallback(() => {
     if (flipping) return;
@@ -160,6 +195,7 @@ export function InvitationViewer({ template, colorway, language, personalisation
 
             {/* Current page */}
             <div
+              ref={cardProofRef}
               className={`${cardBase} absolute inset-0 rounded-lg overflow-hidden`}
               style={{
                 transform: flipping ? 'translateZ(0)' : 'translateZ(0)',
@@ -263,8 +299,23 @@ export function InvitationViewer({ template, colorway, language, personalisation
             onClick={() => setFullscreen(true)}
             aria-label="Fullscreen preview"
             className="w-11 h-11 rounded-full border border-champagne/40 flex items-center justify-center hover:bg-champagne/10 transition"
+            title="Fullscreen Immersion"
           >
             <Maximize2 className={`w-4 h-4 ${isDark ? 'text-ivory' : 'text-sapphire'}`} />
+          </button>
+
+          <button
+            onClick={handleDownloadProof}
+            disabled={downloading}
+            aria-label="Download page proof"
+            className="w-11 h-11 rounded-full border border-champagne/40 flex items-center justify-center hover:bg-champagne/10 transition"
+            title="Download HD Page Proof"
+          >
+            {downloadSuccess ? (
+              <Check className="w-4 h-4 text-emerald" />
+            ) : (
+              <Download className={`w-4 h-4 ${isDark ? 'text-ivory' : 'text-sapphire'} ${downloading ? 'animate-bounce' : ''}`} />
+            )}
           </button>
         </div>
 

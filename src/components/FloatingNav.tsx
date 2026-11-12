@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShoppingBag, Phone } from 'lucide-react';
+import { Menu, X, ShoppingBag, Phone, Heart } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
+import { useWishlist } from '@/context/WishlistContext';
 import { BUSINESS } from '@/data/templates';
 
 const NAV_LINKS = [
@@ -22,6 +23,7 @@ export function FloatingNav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { count } = useCart();
+  const { wishlistCount } = useWishlist();
   const location = useLocation();
 
   useEffect(() => {
@@ -81,6 +83,20 @@ export function FloatingNav() {
 
             {/* Right actions */}
             <div className="flex items-center gap-1.5">
+              <Link
+                to="/explore?wishlist=true"
+                className="relative w-10 h-10 rounded-full flex items-center justify-center hover:bg-champagne/10 transition-all duration-300"
+                aria-label="View saved designs"
+                title="Wishlist"
+              >
+                <Heart className={`w-[18px] h-[18px] ${wishlistCount > 0 ? 'text-red-500 fill-current' : 'text-sapphire'}`} />
+                {wishlistCount > 0 && (
+                  <span className="absolute -top-0 -right-0 min-w-[18px] h-[18px] px-1 rounded-full bg-red-500 text-white text-[10px] flex items-center justify-center font-semibold">
+                    {wishlistCount}
+                  </span>
+                )}
+              </Link>
+
               <Link
                 to="/cart"
                 className="relative w-10 h-10 rounded-full flex items-center justify-center hover:bg-champagne/10 transition-all duration-300"

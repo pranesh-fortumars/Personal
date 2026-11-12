@@ -1,5 +1,6 @@
 import type { Colorway, Language, PageContent, Template, Personalisation } from '@/types';
 import { OrnamentArt } from './OrnamentArt';
+import { RsvpQrCode } from './RsvpQrCode';
 
 interface Props {
   template: Template;
@@ -344,6 +345,12 @@ function RsvpPage(p: {
         </p>
         <p className="text-base font-display" style={{ color: p.colorway.primary }}>{p.rsvp}</p>
       </div>
+
+      {/* Dynamic RSVP QR Code */}
+      <div className="mt-3">
+        <RsvpQrCode rsvpPhone={p.rsvp} eventName="Aurelia Celebration" size={70} />
+      </div>
+
       <div className="mt-4 pt-3 border-t w-32 mx-auto" style={{ borderColor: `${p.colorway.border}30` }}>
         <p className="text-[10px] tracking-widest2 uppercase" style={{ color: p.colorway.textSoft }}>
           {p.isTamil ? 'இடம்' : 'Venue'}

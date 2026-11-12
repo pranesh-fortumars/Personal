@@ -4,6 +4,7 @@ import { Search, SlidersHorizontal, X, Check, LayoutGrid, Rows3, Maximize2, Pale
 import { TEMPLATES } from '@/data/templates';
 import { CATEGORIES, COLORWAYS, CATEGORY_MAP } from '@/data/colorways';
 import { InvitationCard } from '@/components/InvitationCard';
+import { useWishlist } from '@/context/WishlistContext';
 import type { CategoryId, Language } from '@/types';
 
 const PRICE_BUCKETS = [
@@ -40,10 +41,14 @@ export function ExplorePage() {
   const [sortMode, setSortMode] = useState<'featured' | 'priceLow' | 'priceHigh'>('featured');
   const [galleryLayout, setGalleryLayout] = useState<GalleryLayout>('gallery');
   const [galleryTheme, setGalleryTheme] = useState<GalleryTheme>('porcelain');
+  const [onlyWishlist, setOnlyWishlist] = useState(false);
+  const { wishlistIds } = useWishlist();
 
   useEffect(() => {
     const cat = searchParams.get('category');
     if (cat) setSelectedCats(new Set([cat as CategoryId]));
+    const wl = searchParams.get('wishlist');
+    if (wl === 'true') setOnlyWishlist(true);
   }, [searchParams]);
 
   const toggle = <T,>(set: Set<T>, val: T, setter: (s: Set<T>) => void) => {
@@ -58,6 +63,7 @@ export function ExplorePage() {
 
   const filtered = useMemo(() => {
     const result = TEMPLATES.filter((t) => {
+      if (onlyWishlist && !wishlistIds.includes(t.id)) return false;
       if (query) {
         const q = query.toLowerCase();
         if (!t.name.toLowerCase().includes(q) && !t.tamilName.includes(query) && !t.category.includes(q)) return false;
@@ -80,7 +86,7 @@ export function ExplorePage() {
     if (sortMode === 'priceLow') return [...result].sort((a, b) => a.price - b.price);
     if (sortMode === 'priceHigh') return [...result].sort((a, b) => b.price - a.price);
     return result;
-  }, [query, selectedCats, selectedLangs, selectedColors, selectedPrice, sortMode]);
+  }, [query, selectedCats, selectedLangs, selectedColors, selectedPrice, sortMode, onlyWishlist, wishlistIds]);
 
   const clearAll = () => {
     setSelectedCats(new Set());
