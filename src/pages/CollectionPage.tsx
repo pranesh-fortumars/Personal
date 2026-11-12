@@ -21,23 +21,40 @@ export function CollectionPage() {
 
   return (
     <div className="min-h-screen bg-porcelain pt-20">
-      {/* Hero */}
-      <div className="relative overflow-hidden px-6 py-16 md:py-24" style={{ background: cw ? `linear-gradient(160deg, ${cw.bg}, ${cw.bgAlt})` : 'linear-gradient(160deg, #F4EFE5, #E8E0CC)' }}>
+      {/* Luxury Royal Hero */}
+      <div 
+        className="relative overflow-hidden px-6 py-20 md:py-28 bg-sapphire-deep text-ivory grain-dark"
+        style={{
+          background: 'radial-gradient(ellipse 70% 60% at 50% 20%, #173A70 0%, #081628 100%)',
+          borderBottom: '1px solid rgba(197, 164, 109, 0.25)'
+        }}
+      >
         <div className="absolute inset-0 pointer-events-none">
-          {cw && <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full blur-3xl opacity-20" style={{ background: cw.primary }} />}
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-80 rounded-full blur-[100px] opacity-30 bg-champagne" />
+          <div className="absolute bottom-0 right-10 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-emerald" />
         </div>
-        <div className="max-w-5xl mx-auto relative flex flex-col items-center text-center">
+        <div className="max-w-5xl mx-auto relative flex flex-col items-center text-center z-10">
           {sample && cw && (
-            <div className="mb-6 animate-fade-in">
-              <OrnamentArt ornament={sample.ornament} cw={cw} size={70} />
+            <div className="mb-6 animate-fade-in p-3 rounded-full bg-champagne/10 border border-champagne/30 backdrop-blur-sm shadow-glow-gold">
+              <OrnamentArt ornament={sample.ornament} cw={{ ...cw, primary: '#C5A46D', gold: '#F4EFE5' }} size={65} />
             </div>
           )}
-          <p className="text-[10px] tracking-widest3 uppercase text-champagne mb-3">Collection</p>
-          <h1 className="text-4xl md:text-6xl font-display text-sapphire-deep leading-tight">{meta.name}</h1>
-          <p className="font-tamil text-xl md:text-2xl text-sapphire/70 mt-2">{meta.tamilName}</p>
-          <div className="h-px w-16 mx-auto my-5 gold-line" />
-          <p className="text-base md:text-lg font-display italic text-sapphire-deep/80 max-w-xl font-normal">{meta.hero}</p>
-          <p className="text-sm text-sapphire-deep/70 max-w-lg mt-2">{meta.blurb}</p>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-champagne/15 border border-champagne/30 text-[10px] tracking-widest3 uppercase text-champagne mb-4">
+            <span>Bespoke Collection</span>
+          </div>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-ivory leading-tight drop-shadow-md">
+            {meta.name}
+          </h1>
+          <p className="font-tamil text-2xl md:text-3xl text-champagne mt-3 tracking-wide">
+            {meta.tamilName}
+          </p>
+          <div className="h-px w-20 mx-auto my-6 bg-gradient-to-r from-transparent via-champagne to-transparent" />
+          <p className="text-lg md:text-xl font-display italic text-ivory/85 max-w-xl font-normal leading-relaxed">
+            {meta.hero}
+          </p>
+          <p className="text-sm text-ivory/70 max-w-lg mt-2.5 leading-relaxed font-sans font-light">
+            {meta.blurb}
+          </p>
         </div>
       </div>
 

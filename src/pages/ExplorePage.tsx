@@ -113,23 +113,30 @@ export function ExplorePage() {
   return (
     <div className="min-h-screen transition-colors duration-700" style={{ backgroundColor: activeTheme.background }}>
       {/* Hero header */}
-      <div className="px-6 pt-32 pb-12 md:pt-40 md:pb-16 relative overflow-hidden transition-colors duration-700" style={{ background: `linear-gradient(180deg, ${activeTheme.hero} 0%, ${activeTheme.background} 100%)` }}>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-champagne/[0.04] blur-3xl pointer-events-none" aria-hidden />
-        <div className="max-w-7xl mx-auto relative text-center">
-          <div className="flex items-center justify-center gap-3 mb-5">
-            <span className="h-px w-6 bg-champagne/40" />
-            <p className="eyebrow text-champagne">The Invitation Gallery</p>
-            <span className="h-px w-6 bg-champagne/40" />
+      <div 
+        className="px-6 pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden bg-sapphire-deep text-ivory grain-dark"
+        style={{
+          background: 'radial-gradient(ellipse 75% 65% at 50% 15%, #173A70 0%, #071526 100%)',
+          borderBottom: '1px solid rgba(197, 164, 109, 0.2)'
+        }}
+      >
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 left-1/4 w-96 h-96 rounded-full bg-champagne/10 blur-[110px]" />
+          <div className="absolute bottom-5 right-1/4 w-96 h-96 rounded-full bg-emerald/15 blur-[120px]" />
+        </div>
+        <div className="max-w-7xl mx-auto relative text-center z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-champagne/15 border border-champagne/30 text-[10px] tracking-widest3 uppercase text-champagne mb-5">
+            <span>The Master Exhibition</span>
           </div>
-          <h1 className="heading-display text-4xl md:text-6xl text-sapphire-deep leading-display text-balance">
-            Explore the Invitation World
+          <h1 className="heading-display text-4xl md:text-6xl lg:text-7xl text-ivory leading-display text-balance drop-shadow-md">
+            The Invitation Gallery
           </h1>
-          <div className="divider-ornament my-5">
+          <div className="divider-ornament my-6">
             <span className="text-champagne text-xs">✦</span>
           </div>
-          <p className="text-base md:text-lg heading-editorial italic text-sapphire/75 max-w-2xl mx-auto leading-relaxed2">
-            Sixty original designs across weddings, celebrations, and Tamil heritage.
-            Each opens to its own multi-page world.
+          <p className="text-lg md:text-xl heading-editorial italic text-ivory/80 max-w-2xl mx-auto leading-relaxed2 font-normal">
+            Sixty original bespoke designs across weddings, sacred muhurthams, milestones, and celebrations.
+            Each invitation suite opens into its own interactive 3D world.
           </p>
         </div>
       </div>
