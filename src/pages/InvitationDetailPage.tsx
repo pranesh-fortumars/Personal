@@ -48,7 +48,6 @@ export function InvitationDetailPage() {
 
   const cw = template.colorways[colorIdx];
   const cat = CATEGORY_MAP[template.category];
-  const isDark = cw.bg.startsWith('#1') || cw.bg.startsWith('#2');
   const total = template.price * quantity;
 
   const updateField = (key: keyof Personalisation, value: string) => {

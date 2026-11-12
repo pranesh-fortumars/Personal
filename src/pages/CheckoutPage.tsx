@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Truck, Check, MessageCircle, ArrowLeft, Phone } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { BUSINESS } from '@/data/templates';
@@ -32,7 +32,6 @@ export function CheckoutPage() {
   const [form, setForm] = useState<CheckoutForm>(EMPTY);
   const [errors, setErrors] = useState<Partial<Record<keyof CheckoutForm, string>>>({});
   const [submitted, setSubmitted] = useState(false);
-  const navigate = useNavigate();
 
   if (items.length === 0 && !submitted) {
     return (

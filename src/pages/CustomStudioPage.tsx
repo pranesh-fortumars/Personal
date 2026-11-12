@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Sparkles, MessageCircle, Check } from 'lucide-react';
-import { SectionHeading } from '@/components/SectionHeading';
 import { BUSINESS } from '@/data/templates';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/lib/firebase';

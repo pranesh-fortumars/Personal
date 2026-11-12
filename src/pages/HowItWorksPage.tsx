@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Compass, Palette, Globe2, Edit3, ShoppingCart, MessageCircle, ArrowRight } from 'lucide-react';
-import { SectionHeading } from '@/components/SectionHeading';
 
 const STEPS = [
   { icon: Compass, title: 'Explore the World', text: 'Browse 60 original invitation designs across weddings, celebrations, and Tamil heritage collections.' },

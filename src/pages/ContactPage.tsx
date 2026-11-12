@@ -1,6 +1,5 @@
-import { Phone, MessageCircle, Mail, Truck } from 'lucide-react';
+import { Phone, MessageCircle, Truck } from 'lucide-react';
 import { BUSINESS } from '@/data/templates';
-import { SectionHeading } from '@/components/SectionHeading';
 
 export function ContactPage() {
   return (

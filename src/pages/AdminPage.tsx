@@ -4,22 +4,15 @@ import {
   Package, 
   ShoppingBag, 
   Tag, 
-  Settings, 
   Eye, 
-  CheckCircle, 
-  Clock, 
-  IndianRupee, 
-  Palette, 
   LogOut, 
-  Search,
-  Filter,
-  ExternalLink,
-  ChevronRight,
-  Sparkles
+  Search, 
+  Filter, 
+  ExternalLink, 
+  Sparkles 
 } from 'lucide-react';
 import { TEMPLATES } from '@/data/templates';
 import { CATEGORIES } from '@/data/colorways';
-import type { Template } from '@/types';
 import { Link } from 'react-router-dom';
 import { fetchFirebaseOrders, updateFirebaseOrderStatus } from '@/lib/firebaseService';
 
@@ -67,7 +60,7 @@ export function AdminPage() {
   const [orders, setOrders] = useState<MockOrder[]>(() => {
     const saved = localStorage.getItem('aurelia_orders');
     if (saved) {
-      try { return JSON.parse(saved); } catch (e) { /* ignore */ }
+      try { return JSON.parse(saved); } catch { /* ignore */ }
     }
     return [
       {

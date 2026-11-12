@@ -1,11 +1,10 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { TEMPLATES } from '@/data/templates';
-import { CATEGORY_MAP, CATEGORIES } from '@/data/colorways';
+import { CATEGORIES } from '@/data/colorways';
 import { InvitationCard } from '@/components/InvitationCard';
 import { OrnamentArt } from '@/components/OrnamentArt';
 import { LaunchOfferBanner } from '@/components/LaunchOfferBanner';
-import type { CategoryId } from '@/types';
 
 export function CollectionPage() {
   const { categoryId } = useParams<{ categoryId: string }>();

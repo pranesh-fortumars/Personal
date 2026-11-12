@@ -8,6 +8,7 @@ import {
   query, 
   orderBy, 
   serverTimestamp,
+  type FieldValue,
   type Timestamp 
 } from 'firebase/firestore';
 import { db } from './firebase';
@@ -39,7 +40,7 @@ export interface FirebaseOrder {
   totalAmount: number;
   deliveryCharge: number; // Always 0
   status: 'Pending Contact' | 'Proof Approved' | 'In Production' | 'Dispatched' | 'Delivered';
-  createdAt?: any;
+  createdAt?: Timestamp | FieldValue | null;
 }
 
 export interface FirebaseCustomisationDraft {
@@ -48,7 +49,7 @@ export interface FirebaseCustomisationDraft {
   colorwayIndex: number;
   language: string;
   personalisation: Personalisation;
-  updatedAt?: any;
+  updatedAt?: Timestamp | FieldValue | null;
 }
 
 // 1. Order Operations

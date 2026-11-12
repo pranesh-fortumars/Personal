@@ -48,7 +48,11 @@ export function ExplorePage() {
 
   const toggle = <T,>(set: Set<T>, val: T, setter: (s: Set<T>) => void) => {
     const next = new Set(set);
-    next.has(val) ? next.delete(val) : next.add(val);
+    if (next.has(val)) {
+      next.delete(val);
+    } else {
+      next.add(val);
+    }
     setter(next);
   };
 
