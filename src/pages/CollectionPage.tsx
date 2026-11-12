@@ -59,13 +59,13 @@ export function CollectionPage() {
       </div>
 
       {/* Grid */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="flex items-center justify-between mb-8">
-          <p className="text-xs tracking-widest2 uppercase text-sapphire/40">
-            {items.length} {items.length === 1 ? 'Design' : 'Designs'}
+      <div className="max-w-7xl mx-auto px-6 py-14">
+        <div className="flex items-center justify-between mb-8 pb-4 border-b border-champagne/20">
+          <p className="text-xs tracking-widest2 uppercase text-sapphire-deep font-semibold">
+            {items.length} {items.length === 1 ? 'Curated Design' : 'Curated Designs'}
           </p>
-          <Link to="/explore" className="text-xs tracking-widest2 uppercase text-champagne hover:text-sapphire transition flex items-center gap-1">
-            All Invitations <ArrowRight className="w-3 h-3" />
+          <Link to="/explore" className="text-xs tracking-widest2 uppercase text-champagne font-semibold hover:text-sapphire-deep transition flex items-center gap-1.5">
+            All Invitations <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 

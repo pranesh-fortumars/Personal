@@ -30,13 +30,13 @@ export function InvitationCard({ template, index = 0 }: Props) {
           className="card-sheen relative aspect-[5/7] rounded-xl overflow-hidden transition-all duration-700 group-hover:[transform:rotateX(4deg)_rotateY(-4deg)] group-hover:shadow-card-hover preserve-3d"
           style={{
             background: `linear-gradient(160deg, ${cw.bg} 0%, ${cw.bgAlt} 100%)`,
-            boxShadow: '0 12px 40px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.06)',
-            border: `1px solid ${cw.border}30`,
+            boxShadow: '0 16px 45px rgba(16, 43, 76, 0.16), 0 6px 16px rgba(0,0,0,0.08)',
+            border: `1.5px solid ${cw.border}55`,
           }}
         >
-          {/* Double border frame — finer inner line */}
-          <div className="absolute inset-2.5 pointer-events-none rounded-md" style={{ border: `1px solid ${cw.border}40` }} />
-          <div className="absolute inset-3.5 pointer-events-none rounded-sm" style={{ border: `0.5px solid ${cw.border}20` }} />
+          {/* Double border frame — finer inner line with elevated contrast */}
+          <div className="absolute inset-2.5 pointer-events-none rounded-md" style={{ border: `1.5px solid ${cw.border}70` }} />
+          <div className="absolute inset-3.5 pointer-events-none rounded-sm" style={{ border: `0.75px solid ${cw.border}40` }} />
 
           {/* Corner accents */}
           <CornerAccent color={cw.gold} className="top-2 left-2" />
@@ -49,18 +49,18 @@ export function InvitationCard({ template, index = 0 }: Props) {
             <div className="mb-3 transition-transform duration-700 group-hover:scale-110 group-hover:-translate-y-1">
               <OrnamentArt ornament={template.ornament} cw={cw} size={68} />
             </div>
-            <p className="text-[8px] tracking-widest3 uppercase mb-1.5" style={{ color: cw.textSoft }}>
+            <p className="text-[9px] tracking-widest3 uppercase mb-1.5 font-semibold" style={{ color: cw.primary }}>
               {cat.name}
             </p>
-            <h3 className="heading-display text-lg md:text-xl leading-extra-tight" style={{ color: cw.primary }}>
+            <h3 className="heading-display text-lg md:text-xl leading-extra-tight font-bold" style={{ color: cw.secondary || cw.primary }}>
               {template.name}
             </h3>
             <div className="flex items-center gap-1.5 my-2">
-              <span className="h-px w-4" style={{ background: cw.gold, opacity: 0.5 }} />
-              <span className="text-[8px]" style={{ color: cw.gold }}>✦</span>
-              <span className="h-px w-4" style={{ background: cw.gold, opacity: 0.5 }} />
+              <span className="h-px w-5" style={{ background: cw.gold }} />
+              <span className="text-[9px]" style={{ color: cw.gold }}>✦</span>
+              <span className="h-px w-5" style={{ background: cw.gold }} />
             </div>
-            <p className="font-tamil text-sm leading-tight" style={{ color: cw.secondary }}>
+            <p className="font-tamil text-sm md:text-base leading-tight font-medium" style={{ color: cw.text }}>
               {template.tamilName}
             </p>
 
@@ -89,28 +89,28 @@ export function InvitationCard({ template, index = 0 }: Props) {
         </div>
       </div>
 
-      {/* Meta below — refined editorial layout */}
+      {/* Meta below — refined editorial layout with crisp contrast */}
       <div className="mt-4 px-1">
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0 flex-1">
-            <p className="eyebrow text-sapphire/40 truncate">{cat.name}</p>
-            <p className="heading-display text-base text-sapphire-deep mt-0.5 leading-tight truncate">{template.name}</p>
+            <p className="eyebrow text-champagne-deep font-semibold truncate">{cat.name}</p>
+            <p className="heading-display text-base md:text-lg text-sapphire-deep font-bold mt-0.5 leading-tight truncate">{template.name}</p>
           </div>
           <div className="text-right flex-shrink-0">
-            <p className="flex items-center justify-end gap-0.5 text-base heading-display text-sapphire-deep">
+            <p className="flex items-center justify-end gap-0.5 text-base md:text-lg heading-display text-sapphire-deep font-bold">
               <IndianRupee className="w-3.5 h-3.5 text-champagne" />
               {template.price.toLocaleString('en-IN')}
             </p>
-            <p className="text-[9px] tracking-widest2 uppercase text-sapphire/30 font-body">per invitation</p>
+            <p className="text-[9px] tracking-widest2 uppercase text-sapphire-deep/60 font-body font-medium">per invitation</p>
           </div>
         </div>
         {/* Language availability */}
         <div className="flex items-center gap-2 mt-2">
-          <span className="text-[9px] tracking-widest2 uppercase text-sapphire/30">Available in</span>
+          <span className="text-[9px] tracking-widest2 uppercase text-sapphire-deep/60 font-medium">Available in</span>
           <div className="flex gap-1">
-            <span className="text-[9px] px-1.5 py-0.5 rounded bg-sapphire/5 text-sapphire/50">EN</span>
-            <span className="text-[9px] px-1.5 py-0.5 rounded bg-sapphire/5 text-sapphire/50 font-tamil">த</span>
-            <span className="text-[9px] px-1.5 py-0.5 rounded bg-sapphire/5 text-sapphire/50">BI</span>
+            <span className="text-[9px] px-1.5 py-0.5 rounded bg-royal-sapphire/10 text-royal-sapphire font-semibold border border-royal-sapphire/20">EN</span>
+            <span className="text-[9px] px-1.5 py-0.5 rounded bg-royal-sapphire/10 text-royal-sapphire font-tamil font-semibold border border-royal-sapphire/20">த</span>
+            <span className="text-[9px] px-1.5 py-0.5 rounded bg-royal-sapphire/10 text-royal-sapphire font-semibold border border-royal-sapphire/20">BI</span>
           </div>
         </div>
       </div>
