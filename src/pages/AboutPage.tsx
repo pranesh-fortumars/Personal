@@ -11,7 +11,7 @@ export function AboutPage() {
           <p className="text-[10px] tracking-widest3 uppercase text-champagne mb-3">Our Story</p>
           <h1 className="text-4xl md:text-6xl font-display text-sapphire-deep leading-tight">About the Studio</h1>
           <div className="h-px w-16 mx-auto my-5 gold-line" />
-          <p className="text-base md:text-lg font-display italic text-sapphire/60 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg font-display italic text-sapphire-deep/80 max-w-2xl mx-auto font-normal">
             AURELIA was born from a simple belief: an invitation is the first chapter of a celebration.
           </p>
         </div>
@@ -22,11 +22,11 @@ export function AboutPage() {
           <div className="text-center mb-12">
             <OrnamentArt ornament={{ kind: 'mandala' }} cw={TEMPLATES[0].colorways[0]} size={70} className="mx-auto" />
           </div>
-          <p className="font-display text-lg text-sapphire/70 leading-relaxed text-center">
+          <p className="font-display text-lg text-sapphire-deep/80 leading-relaxed text-center">
             We are a design studio dedicated to the art of invitation-making. Every design in our world
             is an original creation — crafted with care, inspired by tradition, and built for modern celebrations.
           </p>
-          <p className="font-display text-lg text-sapphire/70 leading-relaxed text-center mt-6">
+          <p className="font-display text-lg text-sapphire-deep/80 leading-relaxed text-center mt-6">
             From Tamil muhurtham invitations rendered in authentic Unicode to vibrant birthday worlds,
             each invitation is a complete suite of pages that opens, turns, and transforms in your hands.
             You choose the colours, the language, the words — and we bring it to life.
@@ -41,7 +41,7 @@ export function AboutPage() {
           ].map((v) => (
             <div key={v.title} className="p-6 rounded-xl bg-ivory/60 border border-champagne/20 text-center">
               <h3 className="font-display text-xl text-sapphire-deep">{v.title}</h3>
-              <p className="text-sm text-sapphire/50 mt-2 font-display italic">{v.text}</p>
+              <p className="text-sm text-sapphire-deep/75 mt-2 font-display italic">{v.text}</p>
             </div>
           ))}
         </div>

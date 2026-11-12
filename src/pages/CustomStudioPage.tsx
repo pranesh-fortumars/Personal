@@ -51,7 +51,7 @@ export function CustomStudioPage() {
           </div>
           <h1 className="text-4xl md:text-6xl font-display text-sapphire-deep leading-tight">The Custom Design Studio</h1>
           <div className="h-px w-16 mx-auto my-5 gold-line" />
-          <p className="text-base md:text-lg font-display italic text-sapphire/60 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg font-display italic text-sapphire-deep/80 max-w-2xl mx-auto font-normal">
             Have a vision that doesn't exist yet? Our atelier creates bespoke invitation worlds —
             designed exclusively for your celebration, in your colours, your language, your story.
           </p>
@@ -70,7 +70,7 @@ export function CustomStudioPage() {
                 <span className="font-serif text-champagne text-lg">{i + 1}</span>
               </div>
               <h3 className="font-display text-lg text-sapphire-deep">{s.title}</h3>
-              <p className="text-sm text-sapphire/50 mt-1 font-display italic">{s.text}</p>
+              <p className="text-sm text-sapphire-deep/75 mt-1 font-display italic">{s.text}</p>
             </div>
           ))}
         </div>

@@ -117,7 +117,7 @@ export function InvitationDetailPage() {
               </button>
               <p className="text-[10px] tracking-widest3 uppercase text-champagne mb-2">{cat.name}</p>
               <h1 className="text-3xl md:text-5xl font-display text-sapphire-deep leading-tight">{template.name}</h1>
-              <p className="font-tamil text-lg text-sapphire/60 mt-1">{template.tamilName}</p>
+              <p className="font-tamil text-lg text-sapphire-deep/75 mt-1">{template.tamilName}</p>
             </div>
 
             <InvitationViewer
@@ -129,7 +129,7 @@ export function InvitationDetailPage() {
             />
 
             <div className="mt-6 text-center">
-              <p className="text-xs text-sapphire/40 font-display italic">
+              <p className="text-xs text-sapphire-deep/70 font-display italic">
                 Click the invitation's right side to turn forward, left side to turn back.
                 Swipe on mobile. Use the fullscreen icon for a closer look.
               </p>

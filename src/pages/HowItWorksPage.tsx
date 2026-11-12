@@ -19,7 +19,7 @@ export function HowItWorksPage() {
           <p className="text-[10px] tracking-widest3 uppercase text-champagne mb-3">The Journey</p>
           <h1 className="text-4xl md:text-6xl font-display text-sapphire-deep leading-tight">How It Works</h1>
           <div className="h-px w-16 mx-auto my-5 gold-line" />
-          <p className="text-base md:text-lg font-display italic text-sapphire/60 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg font-display italic text-sapphire-deep/80 max-w-2xl mx-auto font-normal">
             From discovery to delivery — a simple, elegant path to your perfect invitation.
           </p>
         </div>
@@ -41,7 +41,7 @@ export function HowItWorksPage() {
                   <span className="font-serif text-2xl text-champagne">{String(i + 1).padStart(2, '0')}</span>
                   <h3 className="font-display text-xl text-sapphire-deep">{step.title}</h3>
                 </div>
-                <p className="text-sm text-sapphire/60 mt-1 font-display">{step.text}</p>
+                <p className="text-sm text-sapphire-deep/75 mt-1 font-display">{step.text}</p>
               </div>
             </div>
           ))}

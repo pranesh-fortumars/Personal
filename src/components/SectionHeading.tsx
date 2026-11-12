@@ -24,7 +24,7 @@ export function SectionHeading({ eyebrow, title, subtitle, center = true, light 
         <span className="text-champagne text-xs">✦</span>
       </div>
       {subtitle && (
-        <p className={`text-base md:text-lg heading-editorial italic ${light ? 'text-ivory/70' : 'text-sapphire/75'} max-w-2xl ${center ? 'mx-auto' : ''} leading-relaxed2`}>
+        <p className={`text-base md:text-lg heading-editorial italic ${light ? 'text-ivory/80' : 'text-sapphire-deep/80'} max-w-2xl ${center ? 'mx-auto' : ''} leading-relaxed2 font-normal`}>
           {subtitle}
         </p>
       )}

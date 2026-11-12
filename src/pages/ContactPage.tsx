@@ -9,7 +9,7 @@ export function ContactPage() {
           <p className="text-[10px] tracking-widest3 uppercase text-champagne mb-3">Get in Touch</p>
           <h1 className="text-4xl md:text-6xl font-display text-sapphire-deep leading-tight">Contact</h1>
           <div className="h-px w-16 mx-auto my-5 gold-line" />
-          <p className="text-base md:text-lg font-display italic text-sapphire/60 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg font-display italic text-sapphire-deep/80 max-w-2xl mx-auto font-normal">
             Questions, custom requests, or order enquiries — we're here to help.
           </p>
         </div>
@@ -26,7 +26,7 @@ export function ContactPage() {
             </div>
             <p className="text-[10px] tracking-widest3 uppercase text-champagne mb-2">Call Us</p>
             <p className="text-xl font-display text-sapphire-deep">{BUSINESS.whatsappDisplay}</p>
-            <p className="text-sm text-sapphire/50 mt-2 font-display italic">Tap to call directly</p>
+            <p className="text-sm text-sapphire-deep/70 mt-2 font-display italic">Tap to call directly</p>
           </a>
 
           <a
@@ -40,7 +40,7 @@ export function ContactPage() {
             </div>
             <p className="text-[10px] tracking-widest3 uppercase text-emerald mb-2">WhatsApp</p>
             <p className="text-xl font-display text-sapphire-deep">{BUSINESS.whatsappDisplay}</p>
-            <p className="text-sm text-sapphire/50 mt-2 font-display italic">Chat or send your order</p>
+            <p className="text-sm text-sapphire-deep/70 mt-2 font-display italic">Chat or send your order</p>
           </a>
         </div>
 

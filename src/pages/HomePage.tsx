@@ -335,7 +335,7 @@ function WorldIntro() {
           <div className="divider-ornament my-6">
             <span className="text-champagne text-xs">✦</span>
           </div>
-          <p className="text-lg md:text-xl heading-editorial italic text-sapphire/60 max-w-2xl mx-auto leading-relaxed2">
+          <p className="text-lg md:text-xl heading-editorial italic text-sapphire-deep/80 max-w-2xl mx-auto leading-relaxed2 font-normal">
             Step into a universe of celebration, colour and craftsmanship. Explore bespoke invitation worlds —
             each a complete, personalised suite of pages that opens, turns, and transforms in your hands.
             Not templates. Not cards. Living invitations that begin a memory.
@@ -422,7 +422,7 @@ function InvitationJourney() {
             <h2 className="heading-display text-3xl md:text-5xl text-sapphire-deep leading-display text-balance">
               From first glance<br />to lasting memory.
             </h2>
-            <p className="text-base md:text-lg heading-editorial italic text-sapphire/70 leading-relaxed2 mt-5 max-w-lg">
+            <p className="text-base md:text-lg heading-editorial italic text-sapphire-deep/80 leading-relaxed2 mt-5 max-w-lg">
               A guided, considered way to create an invitation that feels as special as the celebration itself.
             </p>
             <div className="flex flex-wrap gap-2 mt-8" role="tablist" aria-label="Invitation journey steps">
@@ -626,7 +626,7 @@ function FinalCTA() {
           <div className="divider-ornament my-6">
             <span className="text-champagne text-xs">✦</span>
           </div>
-          <p className="text-lg heading-editorial italic text-sapphire/60 max-w-xl mx-auto leading-relaxed2">
+          <p className="text-lg heading-editorial italic text-sapphire-deep/80 max-w-xl mx-auto leading-relaxed2 font-normal">
             Explore sixty original invitation worlds. Personalise every word. Choose your colours.
             Order through WhatsApp. Complimentary delivery, always.
           </p>

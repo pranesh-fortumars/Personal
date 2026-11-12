@@ -14,7 +14,7 @@ export function CartPage() {
             <ShoppingBag className="w-10 h-10 text-champagne" />
           </div>
           <h1 className="text-3xl font-display text-sapphire-deep">Your Cart is Empty</h1>
-          <p className="mt-3 font-display italic text-sapphire/50">
+          <p className="mt-3 font-display italic text-sapphire-deep/75">
             Explore the invitation world and add your favourite designs to begin your order.
           </p>
           <Link
@@ -34,7 +34,7 @@ export function CartPage() {
         <div className="text-center mb-10">
           <p className="text-[10px] tracking-widest3 uppercase text-champagne mb-2">Your Selection</p>
           <h1 className="text-3xl md:text-5xl font-display text-sapphire-deep">My Cart</h1>
-          <p className="text-sm text-sapphire/50 mt-2">{count} {count === 1 ? 'invitation' : 'invitations'} across {items.length} {items.length === 1 ? 'design' : 'designs'}</p>
+          <p className="text-sm text-sapphire-deep/70 mt-2">{count} {count === 1 ? 'invitation' : 'invitations'} across {items.length} {items.length === 1 ? 'design' : 'designs'}</p>
         </div>
 
         <div className="space-y-4">

@@ -37,7 +37,7 @@ export function CheckoutPage() {
     return (
       <div className="min-h-screen bg-porcelain pt-20 flex items-center justify-center px-6">
         <div className="text-center">
-          <p className="font-display italic text-sapphire/50 text-xl">Your cart is empty.</p>
+          <p className="font-display italic text-sapphire-deep/75 text-xl">Your cart is empty.</p>
           <Link to="/explore" className="mt-4 inline-block text-xs tracking-widest2 uppercase text-champagne">
             Explore Invitations →
           </Link>
@@ -168,7 +168,7 @@ export function CheckoutPage() {
           </div>
           <h1 className="text-3xl md:text-4xl font-display text-sapphire-deep">Your Order Details Are Ready</h1>
           <div className="h-px w-16 mx-auto my-5 gold-line" />
-          <p className="font-display italic text-sapphire/60 text-base">
+          <p className="font-display italic text-sapphire-deep/80 text-base font-normal">
             Your order has been prepared and opened in WhatsApp. Our team will contact you to confirm your order and payment details.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
@@ -194,7 +194,7 @@ export function CheckoutPage() {
         <div className="text-center mb-10">
           <p className="text-[10px] tracking-widest3 uppercase text-champagne mb-2">Almost There</p>
           <h1 className="text-3xl md:text-5xl font-display text-sapphire-deep">Checkout</h1>
-          <p className="text-sm text-sapphire/50 mt-2">Submit your order via WhatsApp — no payment online.</p>
+          <p className="text-sm text-sapphire-deep/70 mt-2">Submit your order via WhatsApp — no payment online.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8">

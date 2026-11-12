@@ -36,8 +36,8 @@ export function CollectionPage() {
           <h1 className="text-4xl md:text-6xl font-display text-sapphire-deep leading-tight">{meta.name}</h1>
           <p className="font-tamil text-xl md:text-2xl text-sapphire/70 mt-2">{meta.tamilName}</p>
           <div className="h-px w-16 mx-auto my-5 gold-line" />
-          <p className="text-base md:text-lg font-display italic text-sapphire/60 max-w-xl">{meta.hero}</p>
-          <p className="text-sm text-sapphire/50 max-w-lg mt-2">{meta.blurb}</p>
+          <p className="text-base md:text-lg font-display italic text-sapphire-deep/80 max-w-xl font-normal">{meta.hero}</p>
+          <p className="text-sm text-sapphire-deep/70 max-w-lg mt-2">{meta.blurb}</p>
         </div>
       </div>
 
