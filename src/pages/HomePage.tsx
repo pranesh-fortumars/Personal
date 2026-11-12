@@ -8,6 +8,8 @@ import { OrnamentArt } from '@/components/OrnamentArt';
 import { InvitationCard } from '@/components/InvitationCard';
 import { SectionHeading } from '@/components/SectionHeading';
 import { LaunchOfferBanner } from '@/components/LaunchOfferBanner';
+import { AtelierGridShowcase } from '@/components/AtelierGridShowcase';
+import { LuxuryMarqueeTicker } from '@/components/LuxuryMarqueeTicker';
 
 const FEATURED_IDS = [1, 7, 18, 4, 14, 22];
 
@@ -15,10 +17,12 @@ export function HomePage() {
   return (
     <div className="overflow-hidden">
       <Hero />
+      <LuxuryMarqueeTicker />
       <WorldIntro />
       <FeaturedCollection />
       <InvitationJourney />
       <CategoryWorlds />
+      <AtelierGridShowcase />
       <ExperienceShowcase />
       <LaunchSection />
       <FinalCTA />
